@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container" ng-controller="AppCtrl">
+    <h1>Contact List</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Action</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input class="form-control" ng-model="contact.name"></td>
+            <td><input class="form-control" ng-model="contact.email"></td>
+            <td><input class="form-control" ng-model="contact.number"></td>
+            <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+            <td><button class="btn btn-info" ng-click="update()">Update</button> </td>
+        </tr>
+            <tr ng-repeat="contact in contactList">
+                <td>{{contact.name}}</td>
+                <td>{{contact.email}}</td>
+                <td>{{contact.number}}</td>
+                <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button> </td>
+                <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
