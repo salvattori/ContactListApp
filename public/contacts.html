@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    /*.box2 h1{*/
+        /*font-size: 25px;*/
+    /*}*/
+    /*.container{*/
+        /*background-color: aqua;*/
+        /*align-items: center;*/
+    /*}*/
+    /*.box2 {*/
+        /*display:flex;*/
+        /*align-items:left;*/
+        /*!*display: inline-block;*!*/
+        /*background-color: bisque;*/
+        /*width: 200px;*/
+        /*height: 100px;*/
+        /*margin: 1em;*/
+    /*}*/
+    div.box2 {
+        margin-top: 10px;
+        margin-right: 10px;
+        display: inline-block;
+        height: 200px;
+        width: 300px;
+    }
+
+    header, footer {
+        padding: 1em;
+        color: white;
+        background-color: black;
+        clear: left;
+        text-align: center;
+    }
+    header h1{
+        font-size: 20px;
+    }
+
+    article {
+        background-color: darkgrey;
+        padding: 1em;
+        overflow: hidden;
+    }
+    article h1{
+        font-size: 20px;
+    }
+    article p{
+        font-size: 10px;
+    }
+
+
+</style>
+
+<body>
+
+
+<div class="container" ng-controller="AppCtrl">
+    <h1>Contact List</h1>
+    <div class="box2" ng-repeat="contact in contactList">
+        <header>
+            <h1>{{contact.name}}</h1>
+        </header>
+
+
+        <article>
+            <h1>{{contact.email}}</h1>
+            <p>{{contact.number}}</p>
+        </article>
+
+
+    </div>
+
+
+</div>
+<!--<a href="index.html">Banco de dados</a>-->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
